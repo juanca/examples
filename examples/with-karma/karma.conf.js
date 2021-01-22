@@ -25,13 +25,7 @@ module.exports = function (config) {
     ],
     port: 9876,
     colors: true,
-    browsers: ['chrome_ci'],
-    customLaunchers: {
-      chrome_ci: {
-        base: 'ChromeHeadless',
-        flags: ['--headless', '--no-sandbox'],
-      },
-    },
-    singleRun: true,
+    browsers: ['Chrome'],
+    singleRun: false,
   })
 }

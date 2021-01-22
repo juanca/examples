@@ -21,6 +21,7 @@ self.addEventListener('activate', async function (event) {
 })
 
 self.addEventListener('message', async function (event) {
+  console.log('>>>>>>>>>>>>>>>>> MESSAGE RECEIVED >>>>>>>>>>>>>>>>>>>>', event.data)
   const clientId = event.source.id
   const client = await event.currentTarget.clients.get(clientId)
   const allClients = await self.clients.matchAll()

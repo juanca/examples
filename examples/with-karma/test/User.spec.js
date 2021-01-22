@@ -15,6 +15,7 @@ describe('User', function () {
   })
 
   it('handles successful user login', async () => {
+    window.postMessage({ source: 'hello-world' }, '*')
     const res = await fetch('/login', {
       method: 'POST',
       headers: {
@@ -25,6 +26,7 @@ describe('User', function () {
       }),
     })
     const data = await res.json()
+    window.postMessage({ source: 'hello-world' }, '*')
 
     expect(data).to.deep.equal({
       id: 'f79e82e8-c34a-4dc7-a49e-9fadc0979fda',
